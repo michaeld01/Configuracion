@@ -2,6 +2,7 @@
 #include "ui_configuracion.h"
 
 #include <QDebug>
+#include <QMessageBox>
 #include <QFileDialog>
 #include <QFile>
 #include <QDir>
@@ -57,6 +58,9 @@ void Configuracion::guardarCfg()
         qDebug() << "Archivo almacenado en:" << nombreArchivo;
         //Cerrar archico
         archivo.close();
+        QMessageBox guardado;
+        guardado.setText("Archivo Guardado Exitosamente");
+        guardado.exec();
     }
 }
 
